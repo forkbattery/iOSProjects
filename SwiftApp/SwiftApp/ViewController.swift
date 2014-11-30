@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         
         // Create the labels
         myFirstLabel = UILabel()
+        iPhoneLabel = UILabel()
+        addLabels()
+        
+        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func handleTapGesture(tapGesture : UITapGestureRecognizer){
+        addLabels()
+    }
+    
+    func addLabels(){
         myFirstLabel.text = "My first"
         myFirstLabel.font = UIFont.systemFontOfSize(36)
         myFirstLabel.sizeToFit()
@@ -28,10 +40,9 @@ class ViewController: UIViewController {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: nil, animations: {
             
             self.myFirstLabel.center = CGPoint(x: 100, y: 240)
+            
+            }, completion: nil)
         
-        }, completion: nil)
-        
-        iPhoneLabel = UILabel()
         iPhoneLabel.text = "iPhone app"
         iPhoneLabel.font = UIFont.boldSystemFontOfSize(48)
         iPhoneLabel.sizeToFit()
@@ -45,7 +56,8 @@ class ViewController: UIViewController {
             self.iPhoneLabel.center = CGPoint(x: 200, y: 290)
             self.iPhoneLabel.alpha = 1 //visible
             
-        }, completion: nil)
+            }, completion: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
