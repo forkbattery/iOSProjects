@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     //@IBOutlet for when the code causes the change in UI object
     @IBOutlet weak var textField: UITextField!
@@ -19,6 +19,12 @@ class ViewController: UIViewController {
         label.text = "Hello, " + textField.text + "!"
         //Make the textfield give up being the first responder so that the keyboard goes away after the button is pressed
         self.textField.resignFirstResponder()
+    }
+    
+    //Dismissing the keyboard with delegation with the help of UITextFieldDelegate protocol
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
     
     //Make the keyboard go away when the screen is touched anywhere in the empty space
