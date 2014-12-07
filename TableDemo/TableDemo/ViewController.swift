@@ -19,25 +19,51 @@ class ViewController: UIViewController, UITableViewDataSource {
         ("SFWR 4J03 - Communication Systems","Rong Zheng"),
         ("SFWR 4TB3 - Compilers","Emil Sekerinski"),
         ("SFWR 4DB3 - Database Design","Fei Chiang")]
+    
+    let courses2 = [
+        ("SFWR 3F03 - Machine Computing", "Ned Nedialkov"),
+        ("SFWR 3A04 - Large Systems Design", "Ridha Khedri"),
+        ("SFWR 3I03 - Communication skills", "Emil Sekerinski"),
+        ("SFWR 3S03 - Software Testing and Management", "Ivan Bruha"),
+        ("SFWR 3RA3 - Software Testing and Requirements", "Janicki"),
+        ("SFWR 3GA3 - Computer Architecture", "George Karakostas"),
+        ("STAT 3Y03 - Statistics for Engineers", "Senay Asma")]
 
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courses.count
+        if section == 0 {
+            return courses.count
+        } else {
+            return courses2.count
+        }
     }
     
     //The following function creates a new cell, gives it some value and returns. Called automatically once per row
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
-        let (courseTitle, courseProfessor) = courses[indexPath.row]
-        
-        cell.textLabel?.text = courseTitle
+        //indexPath gets us the row as well as the section
+        if indexPath.section == 0{
+            let (courseTitle, courseProfessor) = courses[indexPath.row]
+            cell.textLabel?.text = courseTitle
+        } else {
+            let (courseTitle, courseProfessor) = courses2[indexPath.row]
+            cell.textLabel?.text = courseTitle
+        }
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
+            return "4th Year Courses"
+        } else {
+            return "3rd Year Courses"
+        }
     }
     
     override func viewDidLoad() {
