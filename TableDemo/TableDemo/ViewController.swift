@@ -50,10 +50,18 @@ class ViewController: UIViewController, UITableViewDataSource {
         if indexPath.section == 0{
             let (courseTitle, courseProfessor) = courses[indexPath.row]
             cell.textLabel?.text = courseTitle
+            //provide the course professor as "subtitle" in the cell
+            cell.detailTextLabel?.text = courseProfessor
         } else {
             let (courseTitle, courseProfessor) = courses2[indexPath.row]
             cell.textLabel?.text = courseTitle
+            cell.detailTextLabel?.text = courseProfessor
         }
+        
+        //retrieve an image
+        var myImage = UIImage(named: "CellIcon")
+        //display the image in the cell
+        cell.imageView?.image = myImage
         
         return cell
     }
