@@ -12,6 +12,10 @@
 		975214EB1A365298009A2A77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 975214EA1A365298009A2A77 /* Images.xcassets */; };
 		975214EE1A365298009A2A77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975214EC1A365298009A2A77 /* LaunchScreen.xib */; };
 		975214FA1A365298009A2A77 /* PhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975214F91A365298009A2A77 /* PhotoViewerTests.swift */; };
+		975215041A36DD4F009A2A77 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975215031A36DD4F009A2A77 /* Photo.swift */; };
+		975215081A36DE39009A2A77 /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975215071A36DE39009A2A77 /* PhotosTableViewController.swift */; };
+		9752150A1A36DE50009A2A77 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975215091A36DE50009A2A77 /* DisplayViewController.swift */; };
+		9752150C1A36DE5D009A2A77 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9752150B1A36DE5D009A2A77 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		975214F31A365298009A2A77 /* PhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		975214F81A365298009A2A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975214F91A365298009A2A77 /* PhotoViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerTests.swift; sourceTree = "<group>"; };
+		975215031A36DD4F009A2A77 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = PhotoViewer/Photo.swift; sourceTree = "<group>"; };
+		975215071A36DE39009A2A77 /* PhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
+		975215091A36DE50009A2A77 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		9752150B1A36DE5D009A2A77 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 		975214D51A365298009A2A77 = {
 			isa = PBXGroup;
 			children = (
+				975215031A36DD4F009A2A77 /* Photo.swift */,
 				975214E01A365298009A2A77 /* PhotoViewer */,
 				975214F61A365298009A2A77 /* PhotoViewerTests */,
 				975214DF1A365298009A2A77 /* Products */,
@@ -80,6 +89,9 @@
 				975214EA1A365298009A2A77 /* Images.xcassets */,
 				975214EC1A365298009A2A77 /* LaunchScreen.xib */,
 				975214E11A365298009A2A77 /* Supporting Files */,
+				975215071A36DE39009A2A77 /* PhotosTableViewController.swift */,
+				975215091A36DE50009A2A77 /* DisplayViewController.swift */,
+				9752150B1A36DE5D009A2A77 /* InfoViewController.swift */,
 			);
 			path = PhotoViewer;
 			sourceTree = "<group>";
@@ -209,7 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975215041A36DD4F009A2A77 /* Photo.swift in Sources */,
 				975214E41A365298009A2A77 /* AppDelegate.swift in Sources */,
+				975215081A36DE39009A2A77 /* PhotosTableViewController.swift in Sources */,
+				9752150A1A36DE50009A2A77 /* DisplayViewController.swift in Sources */,
+				9752150C1A36DE5D009A2A77 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

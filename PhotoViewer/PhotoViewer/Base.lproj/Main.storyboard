@@ -8,17 +8,20 @@
         <!--Photos-->
         <scene sceneID="ApT-hJ-1KU">
             <objects>
-                <tableViewController id="noS-5M-0aV" sceneMemberID="viewController">
+                <tableViewController id="noS-5M-0aV" customClass="PhotosTableViewController" customModule="PhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MIu-XL-qgt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SRG-iQ-hSr">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="photoCell" id="SRG-iQ-hSr">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SRG-iQ-hSr" id="VYo-lP-IlJ">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bdY-G6-YP0" kind="show" id="JGr-bx-bJO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -27,18 +30,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Photos" id="gje-AE-RnT"/>
-                    <connections>
-                        <segue destination="bdY-G6-YP0" kind="show" id="UpQ-tV-Jt8"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9e-oF-zYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1319" y="422"/>
         </scene>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="pdG-md-taw">
             <objects>
-                <viewController id="bdY-G6-YP0" sceneMemberID="viewController">
+                <viewController id="bdY-G6-YP0" customClass="DisplayViewController" customModule="PhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QnO-Vr-KSG"/>
                         <viewControllerLayoutGuide type="bottom" id="KNB-DV-xDJ"/>
@@ -55,7 +55,7 @@
                                 <items>
                                     <barButtonItem title="Notes" id="6QI-s1-HoU">
                                         <connections>
-                                            <segue destination="w7B-WW-Q0N" kind="presentation" id="uv0-jp-o4S"/>
+                                            <segue destination="w7B-WW-Q0N" kind="presentation" modalTransitionStyle="crossDissolve" id="uv0-jp-o4S"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -72,15 +72,18 @@
                             <constraint firstItem="1p7-lx-6A0" firstAttribute="bottom" secondItem="KNB-DV-xDJ" secondAttribute="top" id="sxj-cb-sKm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentImage" destination="ecN-I9-Ugk" id="QVB-AF-8bY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5T-j4-Rk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2028" y="421"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="zU0-Uq-11X">
             <objects>
-                <viewController id="w7B-WW-Q0N" sceneMemberID="viewController">
+                <viewController id="w7B-WW-Q0N" customClass="InfoViewController" customModule="PhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RlE-SA-e3C"/>
                         <viewControllerLayoutGuide type="bottom" id="sKw-77-7FU"/>
@@ -89,21 +92,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-12-LSz">
-                                <rect key="frame" x="61" y="339" width="152" height="69"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-12-LSz">
+                                <rect key="frame" x="61" y="238" width="225" height="213.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-3C-bwJ">
-                                <rect key="frame" x="61" y="424" width="30" height="30"/>
+                                <rect key="frame" x="61" y="476" width="30" height="30"/>
                                 <state key="normal" title="OK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="w7B-WW-Q0N" eventType="touchUpInside" id="of3-Dl-kZI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="detailsLabel" destination="8L3-12-LSz" id="XPK-7F-taq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkP-ZZ-9ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
